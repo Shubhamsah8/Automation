@@ -1,9 +1,6 @@
 package Automation.Selenium;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,12 +24,25 @@ public class CreateAccount {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.name("firstname")));
 
-        driver.findElement(By.name("firstname")).sendKeys("Shubham");
-        driver.findElement(By.name("lastname")).sendKeys("Shah");
-        driver.findElement(By.name("reg_email__")).sendKeys("8779817254");
-        driver.findElement(By.name("reg_passwd__")).sendKeys("Whysoserious123#");
-        driver.findElement(By.id("day")).sendKeys("4");
-        driver.findElement(By.id("month")).sendKeys("April");
-        driver.findElement(By.id("year")).sendKeys("2002");
+        WebElement firstName = driver.findElement(By.name("firstname"));
+        firstName.sendKeys("Shubham");
+
+        WebElement lastName = driver.findElement(By.name("lastname"));
+        lastName.sendKeys("Shah");
+
+        WebElement email = driver.findElement(By.name("reg_email__"));
+        email.sendKeys("8779817254");
+
+        WebElement password = driver.findElement(By.name("reg_passwd__"));
+        password.sendKeys("Whysoserious123#");
+
+        WebElement day = driver.findElement(By.id("day"));
+        day.sendKeys("4");
+
+        WebElement month = driver.findElement(By.id("month"));
+        month.sendKeys("April");
+
+        WebElement year = driver.findElement(By.id("year"));
+        year.sendKeys("2002");
     }
 }

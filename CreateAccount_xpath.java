@@ -2,6 +2,7 @@ package Automation.Selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,14 +26,31 @@ public class CreateAccount_xpath {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.name("firstname")));
 
-        driver.findElement(By.xpath("//input[contains(@name, 'firstname')]")).sendKeys("Shubham");
-        driver.findElement(By.xpath("//input[contains(@name, 'lastname')]")).sendKeys("Shah");
-        driver.findElement(By.xpath("//input[contains(@name, 'reg_email__')]")).sendKeys("8779817254");
-        driver.findElement(By.xpath("//input[contains(@name, 'reg_passwd__')]")).sendKeys("Whysoserious123#");
-        driver.findElement(By.xpath("//select[contains(@id, 'day')]")).sendKeys("4");
-        driver.findElement(By.xpath("//select[contains(@id, 'month')]")).sendKeys("April");
-        driver.findElement(By.xpath("//select[contains(@id, 'year')]")).sendKeys("2002");
-        driver.findElement(By.xpath("//input[contains(@type, 'radio') and contains(@value, '2')]")).click();
-        driver.findElement(By.xpath("//button[contains(text(), 'Sign Up')]")).click();
+        WebElement firstName = driver.findElement(By.xpath("//input[contains(@name, 'firstname')]"));
+        firstName.sendKeys("Shubham");
+
+        WebElement lastName = driver.findElement(By.xpath("//input[contains(@name, 'lastname')]"));
+        lastName.sendKeys("Shah");
+
+        WebElement email = driver.findElement(By.xpath("//input[contains(@name, 'reg_email__')]"));
+        email.sendKeys("8779817254");
+
+        WebElement password = driver.findElement(By.xpath("//input[contains(@name, 'reg_passwd__')]"));
+        password.sendKeys("Whysoserious123#");
+
+        WebElement day = driver.findElement(By.xpath("//select[contains(@id, 'day')]"));
+        day.sendKeys("4");
+
+        WebElement month = driver.findElement(By.xpath("//select[contains(@id, 'month')]"));
+        month.sendKeys("April");
+
+        WebElement year = driver.findElement(By.xpath("//select[contains(@id, 'year')]"));
+        year.sendKeys("2002");
+
+        WebElement gender = driver.findElement(By.xpath("//input[contains(@type, 'radio') and contains(@value, '2')]"));
+        gender.click();
+
+        WebElement signup = driver.findElement(By.xpath("//button[contains(text(), 'Sign Up')]"));
+        signup.click();
     }
 }
