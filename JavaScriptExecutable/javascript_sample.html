@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Executor Example</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>JavaScript Executor</h1>
+<label for="textbox1">Text Box 1:</label>
+<input type="text" id="textbox1" value="Shubham"><br><br>
+
+<label for="textbox2">Text Box 2 (Disabled):</label>
+<input type="text" id="textbox2" value="Hello" disabled><br><br>
+
+<button id="colorButton" onclick="changeColor()">Change Background Color</button>
+<script>
+    function changeColor() {
+        document.body.style.backgroundColor = getRandomColor();
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+</body>
+</html>
