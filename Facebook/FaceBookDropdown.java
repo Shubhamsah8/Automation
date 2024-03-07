@@ -41,6 +41,11 @@ public class FaceBookDropdown {
 
         WebElement day_dropdown = driver.findElement(By.xpath("//select[contains(@id, 'day')]"));
         new Select(day_dropdown).selectByIndex(1);
+        
+
+        //Get the selected option
+        WebElement selectedOption = select.getFirstSelectedOption();
+        System.out.println("Selected option: " + selectedOption.getText());
 
         WebElement month = driver.findElement(By.xpath("//select[contains(@id, 'month')]"));
         new Select(month).selectByIndex(3);
