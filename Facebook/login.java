@@ -14,23 +14,23 @@ public class login {
         driver.get("https://www.facebook.com/"); //Link to lauch the application
         driver.manage().window().maximize(); // To maximize the size of the window
 
-        // Get the title of the browser window
-//        String title = driver.getTitle();
-//        System.out.println(title);
+        //Get the title of the browser window
+        String title = driver.getTitle();
+        System.out.println(title);
 
         // Get the Current URL
-//        String  url = driver.getCurrentUrl();
-//        System.out.println(url);
+        String  url = driver.getCurrentUrl();
+        System.out.println(url);
 
         // Get the page source code of the window
-//        String source = driver.getPageSource();
-//        System.out.println(source);
+        String source = driver.getPageSource();
+        System.out.println(source);
 
         // To close the window
-        // driver.close();
+        driver.close();
 
         // Navigate to different site
-        // driver.navigate().to("https://www.flipkart.com/");
+        driver.navigate().to("https://www.flipkart.com/");
 
         driver.findElement(By.name("email")).sendKeys("Shubham");
         driver.findElement(By.name("pass")).sendKeys("Hello123");
